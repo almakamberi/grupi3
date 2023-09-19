@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+   <header>
+    <a href="#" class="emri">Escape</a>
+    <div class="menu-btn">
+
+
+    </div>
+    <div class="navigation">
+        <div class="navigation-items">
+            <a href="#">Home</a>
+            <a href="#">Rreth nesh</a>
+            <a href="#">Eksploro</a>
+            <a href="#">Fotot</a>
+            <a href="#">Kontakto</a>
+        </div>
+    </div>
+   </header>
+
+   <section class="home">
+    <video class="video-slide active" src="pexels_videos_1448735 (2160p).mp4" autoplay muted loop></video>
+    <video class="video-slide" src="pexels-ruvim-miksanskiy-9634587 (1080p).mp4" autoplay muted loop></video>
+    <video class="video-slide" src="video (1080p).mp4" autoplay muted loop></video>
+    <video class="video-slide" src="pexels_videos_2098988 (2160p).mp4" autoplay muted loop></video>
+    <video class="video-slide" src="video_shot_of_river (Original).mp4" autoplay muted loop></video>
+
+    <!--kontenti per secilin slide-->
+    <div class="content active">
+       <h1>Bjeshkë.<br><span>Ngjitemi</span></h1>
+       <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure explicabo id eos fuga tempore? Voluptate corrupti aspernatur tenetur, iusto alias facilis accusantium illum consectetur, molestiae quis rem illo odit cumque!</p>
+       <a href="#">Lexo me shumë</a>
+    </div>
+
+    <div class="content">
+        <h1>Natyrë.<br><span>Merr frymë</span></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure explicabo id eos fuga tempore? Voluptate corrupti aspernatur tenetur, iusto alias facilis accusantium illum consectetur, molestiae quis rem illo odit cumque!</p>
+        <a href="#">Lexo me shumë</a>
+     </div>
+
+     <div class="content">
+        <h1>Kamping<br><span>Argëtohu</span></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure explicabo id eos fuga tempore? Voluptate corrupti aspernatur tenetur, iusto alias facilis accusantium illum consectetur, molestiae quis rem illo odit cumque!</p>
+        <a href="#">Lexo me shumë</a>
+     </div>
+
+     <div class="content">
+        <h1>Vrapim.<br><span>Buzeqesh</span></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure explicabo id eos fuga tempore? Voluptate corrupti aspernatur tenetur, iusto alias facilis accusantium illum consectetur, molestiae quis rem illo odit cumque!</p>
+        <a href="#">Lexo me shumë</a>
+     </div>
+
+     <div class="content">
+        <h1>Lojëra.<br><span>Të gjithë së bashku</span></h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure explicabo id eos fuga tempore? Voluptate corrupti aspernatur tenetur, iusto alias facilis accusantium illum consectetur, molestiae quis rem illo odit cumque!</p>
+        <a href="#">Lexo me shumë</a>
+     </div>
+
+    <div class="media-icons">
+        <a href="#"><img src="facebook.svg" alt=""></i></a>
+        <a href="#"><img src="instagram.svg" alt=""></i></a>
+    </div>
+
+    <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+    </div>
+   </section>
+
+</body>
+</html>
+<script>
+
+    const menuBtn=document.querySelector(".menu-btn");
+    const navigation=document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () =>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+
+
+    //Slider
+
+    const btns= document.querySelectorAll(".nav-btn");
+    const slides= document.querySelectorAll(".video-slide");
+    const contents= document.querySelectorAll(".content");
+
+    var sliderNav= function(manual){
+
+        btns.forEach((btn) =>{
+btn.classList.remove("active");
+        });
+
+        slides.forEach((slide) =>{
+slide.classList.remove("active");
+        });
+
+        contents.forEach((content) =>{
+content.classList.remove("active");
+        });
+
+        btns[manual].classList.add("active");
+        slides[manual].classList.add("active");
+        contents[manual].classList.add("active");
+    };
+
+        btns.forEach((btn, i) => {
+btn.addEventListener("click", () =>{
+sliderNav(i);
+});
+        });
+    
+</script>
