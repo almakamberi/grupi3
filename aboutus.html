@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rreth-nesh</title>
+    <link rel="stylesheet" href="aboutus.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="emri">Escape</a>
+        <div class="menu-btn">
+    
+    
+        </div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="home.html">Home</a>
+                <a href="aboutus.html">Rreth nesh</a>
+                <a href="explore.html">Eksploro</a>
+                <a href="#">Fotot</a>
+                <a href="contactus.html">Kontakto</a>
+            </div>
+        </div>
+       </header>
+       <div class="about-us">
+        <img src="tenda.jpg" class="img">
+        <div class="content">
+            <h2>Rreth nesh</h2>
+            <hr>
+            <p id="typedText">
+            </p>
+        </div>
+       </div>
+</body>
+</html>
+<script>
+    const menuBtn=document.querySelector(".menu-btn");
+    const navigation=document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () =>{
+        menuBtn.classList.toggle("active");
+        navigation.classList.toggle("active");
+    });
+
+
+    const typedText = document.getElementById('typedText');
+const text = "'Escape' eshte themeluar me qellim te promovimit te pjsemarrjes se rinise ne proceset shoqerore, ne edukimin e te rinjeve mbi ceshtje te interesit te perbashket, promovimin e kultures dhe artit,promovimin e bukurive natyrore ne Komunen e Besianes dhe Republikes se Kosoves ne pergjithesi si dhe mbeshtetjen ne mbrojtjen e tyre, kontribuimit ne promovimin e ecjeve grupore (hiking) dhe kampeve argetuese, kontribuimit ne procesin e socializimit te rinise. Pra 'Escape' do te jete arratia e te rinjeve prej problemeve te perditshme qe i shoqerojne ata, arrati prej sterngarkeses teknologjike. 'Escape' eshte arratisje ne natyre per tu kthyer pikerisht atu ku secili prej nesh perkasim.";
+let index = 0;
+
+function typeText() {
+    if (index < text.length) {
+        typedText.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeText, 20); 
+    }
+}
+
+
+typeText();
+</script>

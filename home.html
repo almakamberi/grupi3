@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Escape</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
+    
    <header>
     <a href="#" class="emri">Escape</a>
     <div class="menu-btn">
@@ -15,19 +16,21 @@
     </div>
     <div class="navigation">
         <div class="navigation-items">
-            <a href="#">Home</a>
-            <a href="#">Rreth nesh</a>
-            <a href="#">Eksploro</a>
+            <a href="home.html">Home</a>
+            <a href="aboutus.html">Rreth nesh</a>
+            <a href="explore.html">Eksploro</a>
             <a href="#">Fotot</a>
-            <a href="#">Kontakto</a>
+            <a href="contactus.html">Kontakto</a>
         </div>
     </div>
    </header>
 
    <section class="home">
+    <!--Videot e qdo slide-->
     <video class="video-slide active" src="pexels_videos_1448735 (2160p).mp4" autoplay muted loop></video>
     <video class="video-slide" src="pexels-ruvim-miksanskiy-9634587 (1080p).mp4" autoplay muted loop></video>
     <video class="video-slide" src="video (1080p).mp4" autoplay muted loop></video>
+    <!-- <img src="kamping.jpg" class="video-slide" alt=""> -->
     <video class="video-slide" src="pexels_videos_2098988 (2160p).mp4" autoplay muted loop></video>
     <video class="video-slide" src="video_shot_of_river (Original).mp4" autoplay muted loop></video>
 
@@ -84,7 +87,7 @@
     const navigation=document.querySelector(".navigation");
 
     menuBtn.addEventListener("click", () =>{
-        menuBtn.classList.toggle("active");
+        menuBtn.classList.toggle("active"); //Kur t kilokohet menubtn me u shfaq x-button
         navigation.classList.toggle("active");
     });
 
@@ -96,10 +99,10 @@
     const slides= document.querySelectorAll(".video-slide");
     const contents= document.querySelectorAll(".content");
 
-    var sliderNav= function(manual){
+    var sliderNav= function(manual){ //manual ka vleren e i
 
         btns.forEach((btn) =>{
-btn.classList.remove("active");
+btn.classList.remove("active");//butonat videot dhe contentet tjera peros aktuales duhet larguar klasa active
         });
 
         slides.forEach((slide) =>{
@@ -110,14 +113,14 @@ slide.classList.remove("active");
 content.classList.remove("active");
         });
 
-        btns[manual].classList.add("active");
+        btns[manual].classList.add("active"); //butonit me index manual(i) i shtohet klasa active
         slides[manual].classList.add("active");
         contents[manual].classList.add("active");
     };
 
-        btns.forEach((btn, i) => {
+        btns.forEach((btn, i) => { //merr qdo buton me indexin e tij
 btn.addEventListener("click", () =>{
-sliderNav(i);
+sliderNav(i);//onclick t butonit ndodh funksioni me parametrin i
 });
         });
     
